@@ -1,8 +1,9 @@
 "use server"
-import { signIn, signOut } from "@/app/api/auth/[...nextauth]/options";
+import { signIn, signOut, auth } from "@/app/api/auth/[...nextauth]/options";
 
 export async function socialLogin(option: string){
-    await signIn(option, {redirectTo: "/dashboard"});
+    const res = await signIn(option, {redirectTo: "/dashboard"});
+    localStorage.setItem("user", JSON.stringify(res));
 }
 
 export async function login(formData: any){

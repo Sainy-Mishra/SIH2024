@@ -15,6 +15,19 @@ const Login = () => {
             setPassword(event.target.value);
         }
     }
+    const handleSocial = async (event: any) =>{
+        event.preventDefault();
+        try{
+            const res = socialLogin('google');
+            if(res){
+                console.log(res);
+            } else{
+                console.log("Something went wrong");
+            }
+        } catch(err: any) {
+            console.log("Something went wrong");
+        }
+    }
     const handleSubmit = async (event: any) => {
         event.preventDefault();
         try {
@@ -90,7 +103,7 @@ const Login = () => {
                         <div className="flex justify-center w-full items-center">
                             <div>
                                 <button
-                                    onClick={(e) => {e.preventDefault();socialLogin("google")}}
+                                    onClick={handleSocial}
                                     className="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                                 >
                                     <FcGoogle className="text-3xl" />
