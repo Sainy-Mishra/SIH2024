@@ -12,6 +12,9 @@ const Dashboard = async () => {
         <h1>{session?.user.name}</h1>
         <Image src={session?.user.image || ''} alt={session?.user.name || ''}  width={200} height={200} />
         <Logout />
+
+                
+
     </div>
   )
 }
