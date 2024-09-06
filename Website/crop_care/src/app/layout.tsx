@@ -17,13 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <SessionProvider>
-        <body className={inter.className}>
+      <body className={inter.className}>
+        <SessionProvider>
           <div className="font-poppins">
             {children}
           </div>
-        </body>
-      </SessionProvider>
+        </SessionProvider>
+      </body>
     </html>
   );
 }
