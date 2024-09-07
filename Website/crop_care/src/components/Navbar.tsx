@@ -1,28 +1,42 @@
+"use client"
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
-import { House } from 'lucide-react';
+import { PiHouseLight, PiSun, PiPaperPlaneTiltLight } from "react-icons/pi";
+import { CiSettings } from 'react-icons/ci';
+import { useRouter } from 'next/navigation';
 
 
 let links = [
-    {name:"Home", link: "/"},
-    {name:"About us", link: "/"},
-    {name:"Gallery", link: "/"},
-    {name:"Services", link: "/"},
+  { name: "Home", link: "#" },
+  { name: "About us", link: "#aboutus" },
+  { name: "Services", link: "#services" },
+  { name: "Contact Us", link: "#contact" },
 ];
 const Navbar = () => {
+  const router = useRouter();
   return (
-    <header className='w-full bg-transparent z-10 absolute flex h-12 my-2 justify-between'>
-      <nav className='flex justify-center py-3 w-[43%] mx-auto text-black font-poppins rounded-full bg-slate-50'> 
+    <header className=''>
+      <div className="pt-5 ">
+        <div className="flex flex-row justify-between mx-10">
+          <div className="ml-7 align-middle text-xl">Logo</div>
+          <div className='fixed left-[27%] top-4 z-10 w-[45%]'>
+            <nav className='flex justify-evenly py-2 mx-auto text-black rounded-full bg-trasparent bg-slate-50 bg-opacity-40'>
 
-        <ul className='flex items-center gap-[3.75vw] '>
-            <li className='flex'><Link className='bg-slate-200 hover:bg-slate-600 hover:text-white px-3 py-1.5 rounded-full font-medium ' href={links[0].link}>{links[0].name}</Link></li>
-            <li className='flex'><Link className='bg-slate-200 hover:bg-slate-600 hover:text-white px-3 py-1.5 rounded-full font-medium ' href={links[1].link}>{links[1].name}</Link></li>
-            <li className='flex'><Link className='bg-slate-200 hover:bg-slate-600 hover:text-white px-3 py-1.5 rounded-full font-medium ' href={links[2].link}>{links[2].name}</Link></li>
-            <li className='flex'><Link className='bg-slate-200 hover:bg-slate-600 hover:text-white px-3 py-1.5 rounded-full font-medium ' href={links[3].link}>{links[3].name}</Link></li>  
-        </ul>
-  
-    </nav>
+              <ul className='flex flex-row items-center gap-[2vw] '>
+                <li onClick={() => router.push(links[0].link)} className='flex flex-row gap-2 bg-slate-200 hover:bg-slate-600 hover:text-green-100 px-3 py-1.5 rounded-full font-medium cursor-pointer '><PiHouseLight className='text-2xl' />{links[0].name}</li>
+                <li onClick={() => router.push(links[1].link)} className='flex flex-row gap-2 bg-slate-200 hover:bg-slate-600 hover:text-green-100 px-3 py-1.5 rounded-full font-medium cursor-pointer '><PiSun className='text-2xl' />{links[1].name}</li>
+                <li onClick={() => router.push(links[2].link)} className='flex flex-row gap-2 bg-slate-200 hover:bg-slate-600 hover:text-green-100 px-3 py-1.5 rounded-full font-medium cursor-pointer '><CiSettings className='text-2xl' />{links[2].name}</li>
+                <li onClick={() => router.push(links[3].link)} className='flex flex-row gap-2 bg-slate-200 hover:bg-slate-600 hover:text-green-100 px-3 py-1.5 rounded-full font-medium cursor-pointer '><PiPaperPlaneTiltLight className='text-2xl' />{links[3].name}</li>
+              </ul>
+
+            </nav>
+          </div>
+          <div className="mr-7 align-middle">
+            <button className="bg-blue-500 cursor-pointer hover:text-green-100 hover:bg-blue-950 text-white p-[0.5rem] rounded-lg">Get Started</button>
+          </div>
+        </div>
+      </div>
     </header>
   )
 }
