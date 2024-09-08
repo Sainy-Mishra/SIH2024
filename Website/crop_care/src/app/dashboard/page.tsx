@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 const Dashboard = () => {
   const session = useSession();
   return (
-      <div>
+      <div className='overflow-hidden max-h-screen'>
           {session.status === "authenticated" && (
             <>
              <div>
