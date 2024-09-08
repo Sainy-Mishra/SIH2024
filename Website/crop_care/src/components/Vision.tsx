@@ -4,7 +4,7 @@ import animationData from "../../public/assets/vision.json";
 
 const About = () => {
     return (
-        <div className='flex flex-col max-h-screen justify center m-10 mt-20 mr-20'>
+        <div className='flex flex-col max-h-screen justify center mb-0 m-10 mt-20 mr-20'>
             <h1 className='text-7xl font-Kodchasan'>Our Vision</h1>
             <div className='flex flex-row'>
                 <div className='w-1/2 text-lg'>
