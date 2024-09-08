@@ -1,10 +1,9 @@
 "use client"
 import React from "react";
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/Vision";
-import { gsap } from "gsap";
+import Teams from "@/components/teams";
 
 export default function Home() {
   return (
@@ -14,6 +13,7 @@ export default function Home() {
         <Hero />
       </main>
       <About />
+      <Teams />
     </>
   );
 }
