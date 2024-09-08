@@ -7,8 +7,6 @@ import { PiHouseLight, PiSun, PiPaperPlaneTiltLight, PiArrowRightLight } from "r
 import { CiSettings } from 'react-icons/ci';
 import { useRouter } from 'next/navigation';
 
-
-
 let links = [
   { name: "Home", link: "#" },
   { name: "About us", link: "#aboutus" },
