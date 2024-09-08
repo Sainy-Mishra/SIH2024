@@ -15,7 +15,10 @@ const config: Config = {
       },
     },
     fontFamily: {
-      poppins: ['Poppins', 'sans-serif'],
+      "Poppins": ['Poppins', 'sans-serif'],
+      "Italiana": ["Italiana", "sans-serif"],
+      "Kodchasan": ["Kodchasan", "sans-serif"],
+      "Lustria": ["Lustria", "sans-serif"],
     }
   },
   plugins: [],
