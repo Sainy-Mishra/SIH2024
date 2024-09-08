@@ -2,9 +2,10 @@
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
-import { PiHouseLight, PiSun, PiPaperPlaneTiltLight } from "react-icons/pi";
+import { PiHouseLight, PiSun, PiPaperPlaneTiltLight, PiArrowRightLight } from "react-icons/pi";
 import { CiSettings } from 'react-icons/ci';
 import { useRouter } from 'next/navigation';
+
 
 
 let links = [
@@ -16,9 +17,14 @@ let links = [
 const Navbar = () => {
   const router = useRouter();
   return (
-      <div className="pt-5 min-h-max mb-5">
+      <div className="pt-5 min-h-max mb-24">
         <div className="flex flex-row justify-between mx-10">
-          <div className="ml-7 align-middle text-xl">Logo</div>
+          <div className="ml-7 items-center align-middle flex flex-row text-xl">
+            <Image src={"/assets/logo.png"} alt="logo" width={50} height={50} />
+            <div className='border-l-2 align-middle items-center border-black p-2 h-full'>
+              AgriCure
+            </div>
+          </div>
           <div className='fixed left-[27%] top-3 z-10 w-[45%]'>
             <nav className='flex justify-evenly py-2 mx-auto text-black rounded-full bg-trasparent bg-slate-50 bg-opacity-40 border-2 border-opacity-30'>
               <ul className='flex flex-row items-center gap-[2vw] '>
@@ -30,7 +36,7 @@ const Navbar = () => {
             </nav>
           </div>
           <div className="mr-7 align-middle">
-            <button onClick={()=>{router.push(`/login`)}} className="bg-blue-500 cursor-pointer hover:text-green-100 hover:bg-blue-950 text-white p-[0.5rem] rounded-lg">Get Started</button>
+            <button onClick={()=>{router.push(`/login`)}} className="bg-blue-500 cursor-pointer flex flex-row hover:text-green-100 hover:bg-blue-950 text-white p-[0.5rem] rounded-lg">Get Started<PiArrowRightLight className='text-2xl mx-2' /></button>
           </div>
         </div>
       </div>
