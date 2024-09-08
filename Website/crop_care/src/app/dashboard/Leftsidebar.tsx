@@ -23,14 +23,14 @@ const Leftsidebar = ({session}: any) => {
             )}
           </div>
           
-          <div className='text-white px-3 py-1.5 pb-4  font-medium border-b'>
+          <div className='text-white px-3 py-2 pb-7 font-medium border-b'>
             {session.data.user && <p>{session.data.user.name}</p>}
           </div>
           
           <ul className='py-5 pt-3 w-full text-center'>
-            <li className='text-slate-100 items-center px-3 py-2 my-3 font-medium rounded-md hover:bg-cyan-300 hover:text-black'><Link className='' href={links[1].link}>{links[1].name}</Link></li>
-            <li className='text-slate-100 px-3 py-2 my-3 font-medium rounded-md hover:bg-cyan-300 hover:text-black'><Link className='' href={links[0].link}>{links[0].name}</Link></li>
-            <li className='text-slate-100 px-3 py-2 my-3 font-medium rounded-md hover:bg-cyan-300 hover:text-black'><Logout  /></li>
+            <li className='text-slate-100 items-center px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><Link className='' href={links[1].link}>{links[1].name}</Link></li>
+            <li className='text-slate-100 px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><Link className='' href={links[0].link}>{links[0].name}</Link></li>
+            <li className='text-slate-100 px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><Logout  /></li>
           </ul>
 
           </div>
