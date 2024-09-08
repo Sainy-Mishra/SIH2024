@@ -14,7 +14,8 @@ const MainContainer = ({ display }: { display: string }) => {
         <EditProfile />
       )}
       {display === "service" && (
-        <Service />
+        <Dashboard />
+        // <Service />
       )}
     </div>
   )

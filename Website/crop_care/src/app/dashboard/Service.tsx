@@ -6,7 +6,7 @@ import './Service.css';
 
 // Importing necessary configurations and assets
 import type { ImageConfigType } from '../dashboard/ImageConfig';
-import uploadImg from '..\..\assets\cloud-upload-regular-240.png';
+import uploadImg from '/assets/cloud-upload-regular-240.png';
 
 // Defining the props interface
 interface ServiceProps {
