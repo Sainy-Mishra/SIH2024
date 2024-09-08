@@ -1,5 +1,6 @@
 "use client"
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/Vision";

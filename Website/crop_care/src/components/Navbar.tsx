@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { PiHouseLight, PiSun, PiPaperPlaneTiltLight, PiArrowRightLight } from "react-icons/pi";
 import { CiSettings } from 'react-icons/ci';
@@ -16,6 +17,7 @@ let links = [
 ];
 const Navbar = () => {
   const router = useRouter();
+  const session = useSession();
   return (
       <div className="pt-5 min-h-max mb-24">
         <div className="flex flex-row justify-between mx-10">
@@ -35,9 +37,14 @@ const Navbar = () => {
               </ul>
             </nav>
           </div>
+          {session?.status === "authenticated" && (
           <div className="mr-7 align-middle">
-            <button onClick={()=>{router.push(`/login`)}} className="bg-blue-500 cursor-pointer flex flex-row hover:text-green-100 hover:bg-blue-950 text-white p-[0.5rem] rounded-lg">Get Started<PiArrowRightLight className='text-2xl mx-2' /></button>
+            <button onClick={()=>{router.push(`/dashboard`)}} className="bg-blue-500 cursor-pointer flex flex-row hover:text-green-100 hover:bg-blue-950 text-white p-[0.5rem] rounded-lg">Dashboard<PiArrowRightLight className='text-2xl mx-2 animate-pulse' /></button>
           </div>
+          )}
+          {session?.status === "unauthenticated" && <div className="mr-7 align-middle">
+            <button onClick={()=>{router.push(`/login`)}} className="bg-blue-500 cursor-pointer flex flex-row hover:text-green-100 hover:bg-blue-950 text-white p-[0.5rem] rounded-lg">Get Started<PiArrowRightLight className='text-2xl mx-2' /></button>
+          </div>}
         </div>
       </div>
   )
