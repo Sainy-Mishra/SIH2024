@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SessionProvider>
-          <div className="font-poppins">
+          <div className="font-Poppins overflow-x-hidden">
             {children}
           </div>
         </SessionProvider>

@@ -61,9 +61,12 @@ const config: Config = {
   			}
   		}
   	},
-  	fontFamily: {
-  		poppins: ['Poppins', 'sans-serif']
-  	}
+    fontFamily: {
+      "Poppins": ['Poppins', 'sans-serif'],
+      "Italiana": ["Italiana", "sans-serif"],
+      "Kodchasan": ["Kodchasan", "sans-serif"],
+      "Lustria": ["Lustria", "sans-serif"],
+    }
   },
   plugins: [require("tailwindcss-animate")],
 };
