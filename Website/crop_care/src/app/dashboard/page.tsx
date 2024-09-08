@@ -15,7 +15,7 @@ const Dashboard = () => {
   }
   const [display, setDisplay] = useState("dashboard");
   return (
-    <div className='overflow-hidden max-h-screen'>
+    <div className='overflow-y-scroll max-h-screen'>
       {session.status === "authenticated" && (
         <>
           <div>
@@ -30,11 +30,6 @@ const Dashboard = () => {
                 <Maincontainer display={display} />
               </div>
             </div>
-            {/* {session.data.user && <h1>{session.data.user.name}</h1>} */}
-            {/* {session.data.user && (
-                <Image src={session.data.user.image ?? ''} alt={session.data.user.name?? ''}  width={200} height={200} />
-              )} */}
-
           </div>
         </>
       )}
