@@ -1,6 +1,7 @@
 import React from 'react';
 import Lottie from "lottie-react";
 import animationData from "../../public/assets/vision.json";
+import { IoIosArrowRoundDown } from "react-icons/io";
 
 const About = () => {
     return (
@@ -20,6 +21,10 @@ const About = () => {
                 <div className='w-1/2 mt-[-100px]'>
                     <Lottie animationData={animationData} autoPlay loop height={500} width={100}/>
                 </div>
+            </div>
+            <div className='flex flex-col text-gray-500 items-center text-center justify-center'>
+                Meet the Minds behind this Masterpiece
+                <IoIosArrowRoundDown className='text-3xl text-black animate-bounce'/>
             </div>
         </div>
     );

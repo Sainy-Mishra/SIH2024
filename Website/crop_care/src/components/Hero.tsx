@@ -5,7 +5,7 @@ import animationData from "../../public/assets/logo.json";
 
 const Hero = () => {
     return (
-        <div className='flex flex-row justify-between mx-10'>
+        <div id='#' className='flex flex-row justify-between mx-10'>
             <div className='w-[50%] flex flex-col justify-center'>
                 <div className='max-w-[60%] mt-5 mx-auto'>
                     <Lottie animationData={animationData} autoPlay loop height={50} width={5}/>

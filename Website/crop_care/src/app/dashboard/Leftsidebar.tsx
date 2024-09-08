@@ -1,21 +1,20 @@
+"use client"
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaPenSquare } from "react-icons/fa";
-import { FaChevronDown } from "react-icons/fa";
-import Logout from '@/components/logout';
+import Logout from '@/components/Logout';
 
 let links = [
-    {name:"Edit Profile", link: "/"},
-    {name:"Services", link: "/"},
+    {name:"Edit Profile", value: 'edit'},
+    {name:"Services", value: 'service'},
     {name:"Contact us", link: "/"},
 ];
-const Leftsidebar = ({session}: any) => {
+const Leftsidebar = ({session, prop}: any) => {
   return (
     <div className='bg-slate-800'>
         {session.status === "authenticated" && (
         <>
-        <div className='flex flex-col w-full px-10 py-3 rounded-xl items-center absolute top-0 left-0 bg-slate-800 h-full'>
+        <div className='flex flex-col w-[75%] px-5 py-3 rounded-xl items-center absolute top-0 left-0 bg-slate-800 h-full'>
 
           <div className='py-5'>
             {session.data.user && ( 
@@ -23,14 +22,21 @@ const Leftsidebar = ({session}: any) => {
             )}
           </div>
           
-          <div className='text-white px-3 py-2 pb-7 font-medium border-b'>
+          <div className='text-white text-2xl px-3 py-2 pb-7 font-medium border-b'>
             {session.data.user && <p>{session.data.user.name}</p>}
           </div>
           
           <ul className='py-5 pt-3 w-full text-center'>
-            <li className='text-slate-100 items-center px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><Link className='' href={links[1].link}>{links[1].name}</Link></li>
-            <li className='text-slate-100 px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><Link className='' href={links[0].link}>{links[0].name}</Link></li>
-            <li className='text-slate-100 px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><Logout  /></li>
+            <li onClick={()=>{
+              prop(links[0].value)
+            }} className='text-slate-100 items-center py-2 my-3 font-medium rounded-md cursor-pointer hover:bg-emerald-300 hover:text-black'>{links[0].name}</li>
+            <li onClick={()=>{
+              prop(links[1].value)
+            }} className='text-slate-100 py-2 my-3 font-medium rounded-md cursor-pointer hover:bg-emerald-300 hover:text-black'>{links[1].name}</li>
+            {session.data.user && ( 
+                <li className='text-slate-100 py-2 my-3 font-medium rounded-md cursor-pointer hover:bg-emerald-300 hover:text-black'><Logout  /></li>
+            )}
+            
           </ul>
 
           </div>
