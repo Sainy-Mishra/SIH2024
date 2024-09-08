@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="pt-5 min-h-max mb-24">
         <div className="flex flex-row justify-between mx-10">
           <div className="ml-7 items-center align-middle flex flex-row text-xl">
-            <Image src={"/assets/logo.png"} alt="logo" width={50} height={50} />
+            <Image src={"/assets/logo.png"} onClick={() => router.push(links[0].link)} alt="logo" className='cursor-pointer' width={50} height={50} />
             <div className='border-l-2 align-middle items-center border-black p-2 h-full'>
               AgriCure
             </div>
