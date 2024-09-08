@@ -23,7 +23,7 @@ const Leftsidebar = ({session}: any) => {
             )}
           </div>
           
-          <div className='text-white px-3 py-1.5 pb-4  font-medium border-b'>
+          <div className='text-white px-3 py-2 pb-7 font-medium border-b'>
             {session.data.user && <p>{session.data.user.name}</p>}
           </div>
           
