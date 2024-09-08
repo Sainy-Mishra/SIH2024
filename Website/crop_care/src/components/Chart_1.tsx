@@ -128,11 +128,11 @@ const chartConfig = {
   },
   desktop: {
     label: "Production",
-    color: "hsl(var(--chart-1))",
+    color: "hsl(131, 100%, 50%)",
   },
   mobile: {
     label: "Demand",
-    color: "hsl(var(--chart-2))",
+    color: "hsl(220, 100%, 50%)",
   },
 } satisfies ChartConfig
 
