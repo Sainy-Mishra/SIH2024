@@ -28,9 +28,9 @@ const Leftsidebar = ({session}: any) => {
           </div>
           
           <ul className='py-5 pt-3 w-full text-center'>
-            <li className='text-slate-100 items-center px-3 py-2 my-3 font-medium rounded-md hover:bg-cyan-300 hover:text-black'><Link className='' href={links[1].link}>{links[1].name}</Link></li>
-            <li className='text-slate-100 px-3 py-2 my-3 font-medium rounded-md hover:bg-cyan-300 hover:text-black'><Link className='' href={links[0].link}>{links[0].name}</Link></li>
-            <li className='text-slate-100 px-3 py-2 my-3 font-medium rounded-md hover:bg-cyan-300 hover:text-black'><Logout  /></li>
+            <li className='text-slate-100 items-center px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><Link className='' href={links[1].link}>{links[1].name}</Link></li>
+            <li className='text-slate-100 px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><Link className='' href={links[0].link}>{links[0].name}</Link></li>
+            <li className='text-slate-100 px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><Logout  /></li>
           </ul>
 
           </div>
