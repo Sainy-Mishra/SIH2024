@@ -15,32 +15,32 @@ const Dashboard = () => {
   }
   const [display, setDisplay] = useState("dashboard");
   return (
-      <div className='overflow-hidden max-h-screen'>
-          {session.status === "authenticated" && (
-            <>
-             <div>
-              <DashNavbar session = {session} prop = {setDisplay} />
-              <div className='m-10 mr-10 border-solid h-[80vh] flex flex-row' >
-                
-                <div className='relative w-[25%] h-full px-5 p-10'>
-                  <Leftsidebar session = {session} prop = {setDisplay}/>
-                </div>
+    <div className='overflow-hidden max-h-screen'>
+      {session.status === "authenticated" && (
+        <>
+          <div>
+            <DashNavbar session={session} prop={setDisplay} />
+            <div className='m-10 mr-10 border-solid h-[80vh] flex flex-row' >
 
-                <div className='h-full w-[75%]'>
-                  <Maincontainer display = {display} />
-                </div>
+              <div className='relative w-[20%] mr-5 h-full py-10'>
+                <Leftsidebar session={session} prop={setDisplay} />
               </div>
-              {/* {session.data.user && <h1>{session.data.user.name}</h1>} */}
-              {/* {session.data.user && (
+
+              <div className='h-full w-[75%]'>
+                <Maincontainer display={display} />
+              </div>
+            </div>
+            {/* {session.data.user && <h1>{session.data.user.name}</h1>} */}
+            {/* {session.data.user && (
                 <Image src={session.data.user.image ?? ''} alt={session.data.user.name?? ''}  width={200} height={200} />
               )} */}
-        
-             </div>
-            </>
-          )}
-          
-      </div>
-    )
+
+          </div>
+        </>
+      )}
+
+    </div>
+  )
 }
 
 export default Dashboard
