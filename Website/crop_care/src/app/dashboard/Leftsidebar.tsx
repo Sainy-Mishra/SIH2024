@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
-import Logout from '@/components/logout';
+import Logout from '@/components/Logout';
 
 let links = [
     {name:"Edit Profile", link: "/"},
