@@ -15,7 +15,7 @@ const MainContainer = ({ display }: { display: string }) => {
       )}
       {display === "service" && (
         // <Dashboard />
-        <Service />
+        <Service onFileChange={(files: File[]) => {}} />
       )}
     </div>
   )
