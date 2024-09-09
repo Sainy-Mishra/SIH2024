@@ -67,7 +67,7 @@ export default function Chart_1() {
         <div className="grid flex-1 gap-1 text-center sm:text-left">
           <CardTitle>Production & Demand of Crop</CardTitle>
           <CardDescription>
-            Showing total visitors for the last 3 months
+            Showing the Production and Demand for June 
           </CardDescription>
         </div>
         <Select value={timeRange} onValueChange={setTimeRange}>
