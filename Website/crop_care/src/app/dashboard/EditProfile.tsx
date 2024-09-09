@@ -22,11 +22,7 @@ const EditProfile = () => {
           </div>
           <div className='flex flex-col'>DOB 
             <DatePicker />      
-            {/* <input type="text" className='bg-slate-300 border-solid border-black-2 rounded-md w-[70%]'/> */}
           </div>
-          {/* <div className='flex flex-col'>Aadhar No. 
-            <input type="text" className='bg-slate-200 border-solid border-black-2 rounded-md w-[70%]'/>
-          </div> */}
           <div className='flex flex-col'>Bio
             <input type="text" className='bg-slate-200 overflow-y-auto border-solid border-black-2 rounded-md w-[75%] h-[75px]'/>            
           </div>
