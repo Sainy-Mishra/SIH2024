@@ -47,13 +47,12 @@ const Login = () => {
     }
     return (
         <div>
-            <h1>Login</h1>
             <div className="relative py-3 sm:max-w-xl sm:mx-auto">
                 <div className="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
                     <form>
                         <div className="max-w-md mx-auto">
                             <div className="flex items-center space-x-5 justify-center">
-                                <h1 className="text-3xl">SIH</h1>
+                                <h1 className="text-3xl">Sign Into AgriCure</h1>
                             </div>
                             <div className="mt-5">
                                 <label
