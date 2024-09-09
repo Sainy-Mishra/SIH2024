@@ -1,24 +1,10 @@
-import type { FC } from 'react';
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
-// Importing the CSS file
 import './Service.css';
 
-// Importing necessary configurations and assets
-import type { ImageConfigType } from '../dashboard/ImageConfig';
-import uploadImg from '/public/assets/cloud-upload-regular-240.png';
-// Defining the props interface
 interface ServiceProps {
     onFileChange: (files: File[]) => void;
 }
-
-// Assuming ImageConfig is an object with string keys
-const ImageConfig: ImageConfigType = {
-    default: uploadImg,
-    pdf: uploadImg,
-    png: uploadImg,
-    css: uploadImg,
-};
 
 const Service: React.FC<ServiceProps> = (props) => {
     const wrapperRef = useRef<HTMLDivElement>(null);
@@ -36,19 +22,22 @@ const Service: React.FC<ServiceProps> = (props) => {
         }
     };
 
-    const onDrop = () => {
+    const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
+        e.preventDefault();
         if (wrapperRef.current) {
             wrapperRef.current.classList.remove('dragover');
         }
+        const newFiles = Array.from(e.dataTransfer.files);
+        const updatedList = [...fileList, ...newFiles];
+        setFileList(updatedList);
+        props.onFileChange(updatedList);
     };
 
     const onFileDrop = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newFile = e.target.files?.[0];
-        if (newFile) {
-            const updatedList = [...fileList, newFile];
-            setFileList(updatedList);
-            props.onFileChange(updatedList);
-        }
+        const newFiles = Array.from(e.target.files || []);
+        const updatedList = [...fileList, ...newFiles];
+        setFileList(updatedList);
+        props.onFileChange(updatedList);
     };
 
     const fileRemove = (file: File) => {
@@ -64,8 +53,10 @@ const Service: React.FC<ServiceProps> = (props) => {
                 className="drop-file-input"
                 onDragEnter={onDragEnter}
                 onDragLeave={onDragLeave}
+                onDragOver={(e) => e.preventDefault()}
                 onDrop={onDrop}
-                role="button" tabIndex={0} // Ensure the div is focusable
+                role="button"
+                tabIndex={0}
                 onKeyDown={(e) => {
                     if (e.key === 'Enter') {
                         e.preventDefault();
@@ -74,7 +65,7 @@ const Service: React.FC<ServiceProps> = (props) => {
                 }}
             >
                 <div className="drop-file-input__label">
-                <Image src={uploadImg} alt="Image" />
+                    <Image src="/assets/cloud-upload-regular-240.png" alt="Image" width={100} height={100} />
                     <p>Drag & Drop your files here</p>
                 </div>
                 <input type="file" onChange={onFileDrop} />
@@ -85,10 +76,10 @@ const Service: React.FC<ServiceProps> = (props) => {
                     {fileList.map((item) => (
                         <div key={item.name} className="drop-file-preview__item">
                             <img
-                                src={
-                                    (ImageConfig[item.type.split('/')[1] as keyof ImageConfigType]).src
-                                }
+                                src={`/assets/${item.type.split('/')[1]}.png`}
                                 alt="Preview"
+                                width={50}
+                                height={50}
                             />
                             <div className="drop-file-preview__item__info">
                                 <p>{item.name}</p>
