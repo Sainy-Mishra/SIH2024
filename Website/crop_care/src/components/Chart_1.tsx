@@ -65,7 +65,7 @@ export default function Chart_1() {
     <Card className="my-0">
       <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
         <div className="grid flex-1 gap-1 text-center sm:text-left">
-          <CardTitle>Area Chart - Interactive</CardTitle>
+          <CardTitle>Production & Demand of Crop</CardTitle>
           <CardDescription>
             Showing total visitors for the last 3 months
           </CardDescription>
@@ -79,13 +79,13 @@ export default function Chart_1() {
           </SelectTrigger>
           <SelectContent className="rounded-xl">
             <SelectItem value="90d" className="rounded-lg">
-              Last 3 months
+              Rice
             </SelectItem>
             <SelectItem value="30d" className="rounded-lg">
-              Last 30 days
+              Tomato 
             </SelectItem>
             <SelectItem value="7d" className="rounded-lg">
-              Last 7 days
+              Wheat
             </SelectItem>
           </SelectContent>
         </Select>

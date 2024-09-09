@@ -29,11 +29,11 @@ import {
 export const description = "An interactive pie chart"
 
 const desktopData = [
-  { month: "Nitrogen", desktop: 186, fill: "var(--color-january)" },
-  { month: "Phosphorus", desktop: 305, fill: "var(--color-february)" },
-  { month: "Potassium", desktop: 237, fill: "var(--color-march)" },
-  { month: "Bio-fertilizers", desktop: 173, fill: "var(--color-april)" },
-  { month: "may", desktop: 209, fill: "var(--color-may)" },
+  { month: "Nitrogen", desktop: 80, fill: "var(--color-january)" },
+  { month: "Phosphorus", desktop: 43, fill: "var(--color-february)" },
+  { month: "Potassium", desktop: 25, fill: "var(--color-march)" },
+  { month: "Bio-fertilizers", desktop: 20, fill: "var(--color-april)" },
+  // { month: "may", desktop: 209, fill: "var(--color-may)" },
 ]
 
 const TomatoData = [
@@ -91,8 +91,8 @@ export default function Component() {
       <ChartStyle id={id} config={chartConfig} />
       <CardHeader className="flex-row items-start space-y-0 pb-0">
         <div className="grid gap-1">
-          <CardTitle>Pie Chart - Interactive</CardTitle>
-          <CardDescription>January - June 2024</CardDescription>
+          <CardTitle className="pr-2 pb-8">Nutrients Required</CardTitle>
+          <CardDescription></CardDescription>
         </div>
         <Select value={activeMonth} onValueChange={setActiveMonth}>
           <SelectTrigger
