@@ -1,136 +1,92 @@
-// import React, { useRef, useState } from 'react';
-// import Image from 'next/image';
-// import './Service.css';
+// import { useState } from 'react';
 
-// interface ServiceProps {
-//     onFileChange: (files: File[]) => void;
+// export default function Upload() {
+//   const [file, setFile] = useState(null);
+//   const [prediction, setPrediction] = useState('');
+
+//   const handleFileChange = (e: any) => {
+//     setFile(e.target.files[0]);
+//   };
+
+//   const handleUpload = async () => {
+//     if (!file) return;
+
+//     const formData = new FormData();
+//     formData.append('file', file);
+
+//     try {
+//       const response = await fetch('http://127.0.0.1:8000/predict/', {
+//         method: 'POST',
+//         body: formData,
+//       });
+
+//       if (response.ok) {
+//         const result = await response.json();
+//         setPrediction(result.prediction);
+//       } else {
+//         setPrediction('Error: Unable to get prediction.');
+//       }
+//     } catch (error) {
+//       console.error('Error:', error);
+//       setPrediction('Error: Unable to connect to the server.');
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h1>Upload an Image</h1>
+//       <input type="file" onChange={handleFileChange} />
+//       <button onClick={handleUpload}>Upload</button>
+//       {prediction && <p>Prediction: {prediction}</p>}
+//     </div>
+//   );
 // }
 
-// const Service: React.FC<ServiceProps> = (props) => {
-//     const wrapperRef = useRef<HTMLDivElement>(null);
-//     const [fileList, setFileList] = useState<File[]>([]);
+import axios from 'axios';
+import { useState } from 'react';
 
-//     const onDragEnter = () => {
-//         if (wrapperRef.current) {
-//             wrapperRef.current.classList.add('dragover');
-//         }
-//     };
+const MyComponent = () => {
+  const [file, setFile] = useState<File | null>(null);
+  const [prediction, setPrediction] = useState<string>('');
 
-//     const onDragLeave = () => {
-//         if (wrapperRef.current) {
-//             wrapperRef.current.classList.remove('dragover');
-//         }
-//     };
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setFile(e.target.files[0]);
+    }
+  };
 
-//     const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
-//         e.preventDefault();
-//         if (wrapperRef.current) {
-//             wrapperRef.current.classList.remove('dragover');
-//         }
-//         const newFiles = Array.from(e.dataTransfer.files);
-//         const updatedList = [...fileList, ...newFiles];
-//         setFileList(updatedList);
-//         props.onFileChange(updatedList);
-//     };
+  const handleUpload = async () => {
+    if (!file) return;
 
-//     const onFileDrop = (e: React.ChangeEvent<HTMLInputElement>) => {
-//         const newFiles = Array.from(e.target.files || []);
-//         const updatedList = [...fileList, ...newFiles];
-//         setFileList(updatedList);
-//         props.onFileChange(updatedList);
-//     };
+    const formData = new FormData();
+    formData.append('file', file);
 
-//     const fileRemove = (file: File) => {
-//         const updatedList = fileList.filter(f => f !== file);
-//         setFileList(updatedList);
-//         props.onFileChange(updatedList);
-//     };
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/predict/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
 
-//     const uploadToMLModel = (file: File) => {
-//         // Implement your logic to upload the file to the ML model here
-//         // You can use libraries like axios to make HTTP requests to the ML model endpoint
-//         // Example:
-//         // axios.post('https://your-ml-model-endpoint', file)
-//         //     .then(response => {
-//         //         // Handle the response from the ML model
-//         //     })
-//         //     .catch(error => {
-//         //         // Handle any errors that occur during the upload
-//         //     });
-//     };
+      if (response.status === 200) {
+        setPrediction(response.data.prediction);
+      } else {
+        setPrediction('Error: Unable to get prediction.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setPrediction('Error: Unable to connect to the server.');
+    }
+  };
 
-//     return (
-//         <>
-//             <div
-//                 ref={wrapperRef}
-//                 className="drop-file-input"
-//                 onDragEnter={onDragEnter}
-//                 onDragLeave={onDragLeave}
-//                 onDragOver={(e) => e.preventDefault()}
-//                 onDrop={onDrop}
-//                 role="button"
-//                 tabIndex={0}
-//                 onKeyDown={(e) => {
-//                     if (e.key === 'Enter') {
-//                         e.preventDefault();
-//                         // Handle keyboard event if necessary
-//                     }
-//                 }}
-//             >
-//                 <div className="drop-file-input__label">
-//                     <Image src="/assets/cloud-upload-regular-240.png" alt="Image" width={100} height={100} />
-//                     <p>Drag & Drop your files here</p>
-//                 </div>
-//                 <input type="file" onChange={onFileDrop} />
-//             </div>
-//             {fileList.length > 0 && (
-//                 <div className="drop-file-preview">
-//                     <p className="drop-file-preview__title">Ready to upload</p>
-//                     {fileList.map((item) => (
-//                         <div key={item.name} className="drop-file-preview__item">
-//                             <img
-//                                 src={`/assets/${item.type.split('/')[1]}.png`}
-//                                 alt="Preview"
-//                                 width={50}
-//                                 height={50}
-//                             />
-//                             <div className="drop-file-preview__item__info">
-//                                 <p>{item.name}</p>
-//                                 <p>{item.size}B</p>
-//                             </div>
-//                             <span
-//                                 className="drop-file-preview__item__del"
-//                                 onClick={() => fileRemove(item)}
-//                                 role="button"
-//                                 tabIndex={0}
-//                                 onKeyDown={(e) => {
-//                                     if (e.key === 'Enter') {
-//                                         e.preventDefault();
-//                                         fileRemove(item);
-//                                     }
-//                                 }}
-//                             >
-//                                 x
-//                             </span>
-//                             <button onClick={() => uploadToMLModel(item)}>Upload to ML Model</button>
-//                         </div>
-//                     ))}
-//                 </div>
-//             )}
-//         </>
-//     );
-// };
-
-// export default Service;
-
-import React from 'react'
-
-const Service = () => {
   return (
     <div>
-        <iframe className='z-20' src="http://localhost:8501/" width="100%" height="600px" />
+      <h1>Upload an Image</h1>
+      <input type="file" onChange={handleFileChange} />
+      <button onClick={handleUpload}>Upload</button>
+      {prediction && <p>Prediction: {prediction}</p>}
     </div>
-  )
-}
+  );
+};
 
-export default Service
+export default MyComponent;
