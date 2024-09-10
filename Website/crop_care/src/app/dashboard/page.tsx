@@ -19,14 +19,14 @@ const Dashboard = () => {
       {session.status === "authenticated" && (
         <>
           <div>
-            <DashNavbar session={session} prop={setDisplay} />
-            <div className='m-10 mr-10 border-solid h-[80vh] flex flex-row' >
+            <div className=' border-solid h-[100vh] flex flex-row' >
 
-              <div className='relative w-[20%] mr-5 h-full py-10'>
+              <div className='relative w-[20%] h-full py-10'>
                 <Leftsidebar session={session} prop={setDisplay} />
               </div>
 
-              <div className='h-full w-[75%]'>
+              <div className='h-full w-full'>
+                {/* <DashNavbar session={session} prop={setDisplay} /> */}
                 <Maincontainer display={display} />
               </div>
             </div>
