@@ -5,7 +5,7 @@ import animationData from "../../public/assets/logo.json";
 
 const Hero = () => {
     return (
-        <div id='#' className='flex flex-row justify-between mx-10'>
+        <div id='#' className='flex flex-row justify-center items-center mx-10'>
             <div className='w-[50%] flex flex-col justify-center'>
                 <div className='max-w-[60%] mt-5 mx-auto'>
                     <Lottie animationData={animationData} autoPlay loop height={50} width={5}/>
@@ -13,9 +13,7 @@ const Hero = () => {
                 <h1 className='text-9xl text-center font-Kodchasan'>
                     AgriCure
                 </h1>
-            </div>
-            <div>
-            koi toh picture aayega
+                <p className='font-Poppins pt-10 text-center text-gray-600'>Diagnosing Crop Diseases, Empowering Farmers</p>
             </div>
         </div>
     )
