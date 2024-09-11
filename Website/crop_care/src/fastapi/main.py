@@ -77,9 +77,9 @@ async def get_data(request: Request):
     data = Data(name='John Doe', age=30)
     return data
 
-
+x = 'tomato'
     # Load your model
-model = tf.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model(x+'.h5')
 
 class PredictionResponse(BaseModel):
     prediction: str

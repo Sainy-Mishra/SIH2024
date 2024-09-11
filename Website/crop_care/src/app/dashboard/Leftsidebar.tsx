@@ -22,8 +22,8 @@ const Leftsidebar = ({session, prop}: any) => {
         <>
         <div className='flex flex-col w-full py-4 items-center absolute top-0 left-0 bg-slate-800 h-[100vh]'>
 
-        <div className=' mr-auto px-auto py-1 text-white cursor-pointer '>
-            <div className="ml-7 items-center align-middle flex flex-row text-xl">
+        <div className='py-1 flex w-full justify-center items-center text-white cursor-pointer '>
+            <div className="items-center align-middle flex flex-row text-xl">
                 <Image className='bg-white rounded-lg p-1' src={"/assets/logo.png"} alt="logo" width={30} height={30} />
                 <div className='border-l-2 align-middle text-lg text-white items-center border-l-white p-1 pl-2 ml-3 h-full'>
                     AgriCure

@@ -8,7 +8,7 @@ const Dashboard = () => {
           <div className='h-[50%] mb-10 col-span-2 bg-purple-400'>
             <div className=''><Chart_1 /></div>
           </div>
-          <div className=' '><PieChart /></div>
+          <div className='min-w-[50%]'><PieChart /></div>
           <div className=''><BarGraph /></div>
     </div>
   )
