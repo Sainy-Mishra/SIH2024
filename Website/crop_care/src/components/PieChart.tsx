@@ -2,6 +2,7 @@
 
 import { TrendingUp } from "lucide-react"
 import { Pie, PieChart } from "recharts"
+import { tomatoDataPie, potatoDataPie, maizeDataPie, riceDataPie, wheatDataPie } from "@/data/data"
 
 import {
   Card,
@@ -68,12 +69,24 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export default function Component() {
+export default function Component({crop}:any) {
+  let chartData;
+  if(crop == "Wheat"){
+    chartData = wheatDataPie;
+  } else if(crop == "Potato"){
+    chartData = potatoDataPie;
+  } else if(crop == "Tomato"){
+    chartData = tomatoDataPie;
+  } else if(crop == "Maize"){
+    chartData = maizeDataPie;
+  } else if(crop=="Rice"){
+    chartData = riceDataPie;
+  }
   return (
     <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Label</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>Nutrient Requirement</CardTitle>
+        <CardDescription></CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer
