@@ -1,46 +1,92 @@
-import React, { useState } from 'react';
+// import { useState } from 'react';
+
+// export default function Upload() {
+//   const [file, setFile] = useState(null);
+//   const [prediction, setPrediction] = useState('');
+
+//   const handleFileChange = (e: any) => {
+//     setFile(e.target.files[0]);
+//   };
+
+//   const handleUpload = async () => {
+//     if (!file) return;
+
+//     const formData = new FormData();
+//     formData.append('file', file);
+
+//     try {
+//       const response = await fetch('http://127.0.0.1:8000/predict/', {
+//         method: 'POST',
+//         body: formData,
+//       });
+
+//       if (response.ok) {
+//         const result = await response.json();
+//         setPrediction(result.prediction);
+//       } else {
+//         setPrediction('Error: Unable to get prediction.');
+//       }
+//     } catch (error) {
+//       console.error('Error:', error);
+//       setPrediction('Error: Unable to connect to the server.');
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h1>Upload an Image</h1>
+//       <input type="file" onChange={handleFileChange} />
+//       <button onClick={handleUpload}>Upload</button>
+//       {prediction && <p>Prediction: {prediction}</p>}
+//     </div>
+//   );
+// }
+
 import axios from 'axios';
+import { useState } from 'react';
 
-const Service: React.FC = () => {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+const MyComponent = () => {
+  const [file, setFile] = useState<File | null>(null);
+  const [prediction, setPrediction] = useState<string>('');
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      setSelectedFile(event.target.files[0]);
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setFile(e.target.files[0]);
     }
   };
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    if (!selectedFile) {
-      alert('Please select a file first!');
-      return;
-    }
+  const handleUpload = async () => {
+    if (!file) return;
 
     const formData = new FormData();
-    formData.append('file', selectedFile);
+    formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:3000/api/integrate', formData, {
+      const response = await axios.post('http://127.0.0.1:8000/predict/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-      console.log('File uploaded successfully:', response.data);
+
+      if (response.status === 200) {
+        setPrediction(response.data.prediction);
+      } else {
+        setPrediction('Error: Unable to get prediction.');
+      }
     } catch (error) {
-      console.error('Error uploading file:', error);
+      console.error('Error:', error);
+      setPrediction('Error: Unable to connect to the server.');
     }
   };
 
   return (
     <div>
-      <h1>Upload a Picture</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="file" onChange={handleFileChange} />
-        <button type="submit">Upload</button>
-      </form>
+      <h1>Upload an Image</h1>
+      <input type="file" onChange={handleFileChange} />
+      <button onClick={handleUpload}>Upload</button>
+      {prediction && <p>Prediction: {prediction}</p>}
     </div>
   );
 };
 
-export default Service;
+export default MyComponent;
