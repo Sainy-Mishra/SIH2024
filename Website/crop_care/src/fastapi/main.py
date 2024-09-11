@@ -124,7 +124,7 @@ async def tomato(file: UploadFile = File(...)) -> PredictionResponse:
 
 @app.post("/potato", response_model=PredictionResponse)
 async def tomato(file: UploadFile = File(...)) -> PredictionResponse:
-    model = tf.keras.models.load_model('tomato.h5')
+    model = tf.keras.models.load_model('potato.h5')
     image = Image.open(BytesIO(await file.read()))
     processed_image = preprocess_image(image)
     predictions = model.predict(processed_image)
