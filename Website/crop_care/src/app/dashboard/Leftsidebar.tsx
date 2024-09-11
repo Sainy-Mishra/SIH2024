@@ -12,7 +12,6 @@ let links = [
     { name: "Dashboard", link: "dashboard" },
     {name:"Services", link: "service"},
     {name:"Contact us", link: "/#contact"},
-    // { name: "Home", link: "/" },
     { name: "Contact us", link: "/#contact" },
 ];
 const Leftsidebar = ({session, prop}: any) => {
