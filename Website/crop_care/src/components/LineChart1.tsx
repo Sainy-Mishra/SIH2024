@@ -99,7 +99,7 @@ export default function Component({crop}: any) {
               }
             />
             <Line
-              // dataKey="visitors"
+              dataKey="visitors"
               type="natural"
               stroke="var(--color-visitors)"
               strokeWidth={2}
