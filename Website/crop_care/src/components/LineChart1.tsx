@@ -72,7 +72,7 @@ export default function Component({crop}: any) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Line Chart - Custom Label</CardTitle>
+        <CardTitle>Price Index per Year</CardTitle>
         <CardDescription></CardDescription>
       </CardHeader>
       <CardContent>
@@ -84,6 +84,7 @@ export default function Component({crop}: any) {
               top: 24,
               left: 24,
               right: 24,
+
             }}
           >
             <CartesianGrid vertical={false} />
@@ -98,7 +99,7 @@ export default function Component({crop}: any) {
               }
             />
             <Line
-              dataKey="visitors"
+              // dataKey="visitors"
               type="natural"
               stroke="var(--color-visitors)"
               strokeWidth={2}

@@ -66,7 +66,7 @@ export default function Chart_1({crop}:any) {
         <div className="grid flex-1 gap-1 text-center sm:grid-cols-2">
           <CardTitle>Production & Demand of Crop</CardTitle>
           <CardDescription>
-            Showing the Production and Demand for June 
+            Showing the Production and Demand Annual
           </CardDescription>
         </div>
       </CardHeader>

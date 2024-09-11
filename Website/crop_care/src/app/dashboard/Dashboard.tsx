@@ -4,7 +4,7 @@ import Chart_1 from '@/components/Chart_1';
 import PieChart from '@/components/PieChart';
 import { RxHamburgerMenu } from "react-icons/rx";
 import LineChart1 from '@/components/LineChart1';
-// import RadialChart1 from '@/components/RadialChart1';
+import RadialChart1 from '@/components/RadialChart1';
 import BarRadial from '@/components/BarRadial';
 // import BarGraph from '@/components/BarGraph';
 const Dashboard = () => {
@@ -49,11 +49,12 @@ const Dashboard = () => {
         <div className='grow-2'><Chart_1 crop={crop} /></div>
       </div>
 
-      <div className='flex flex-col md:flex-row w-full'>
+      <div className='flex flex-col md:flex-row w-full gap-28 px-40'>
         <div className='w-screen md:max-w-96  grow-1'><PieChart crop={crop} /></div>
 
         <div className='w-screen md:max-w-96 grow-1'><LineChart1 crop={crop} /> </div>
-        <div className='w-screen md:max-w-96 grow-1'><BarRadial crop={crop} /> </div>
+        {/* <div className='w-screen md:max-w-96 grow-1'><RadialChart1 crop={crop} /> </div> */}
+        {/* <div className='w-screen md:max-w-96 grow-1'><BarRadial crop={crop} /> </div> */}
       </div>
     </div>
   )

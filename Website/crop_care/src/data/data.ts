@@ -149,32 +149,32 @@ export const wheatDataPie= [
  // RADIAL CHART 
 
 export const wheatDataRadial = [
-    { month: "StripeRust", desktop: "40-70%", mobile: "var(--color-stripe-rust)" },
-    { month: "LeafRust", desktop: "30-60%", mobile: "var(--color-leaf-rust)" },
-    { month: "StemRust", desktop: "40-80%", mobile: "var(--color-stem-rust)" },
-    { month: "SpotBlotch", desktop: "30-50%", mobile: "var(--color-spot-blotch)" },
-    { month: "HeadBlight/Scab", desktop: "20-40%", mobile: "var(--color-head-blight)" },
+    { month: "Stripe Rust", desktop: "40-70%", mobile: "var(--color-chrome)" },
+    { month: "Leaf Rust", desktop: "30-60%", mobile: "var(--color-safari)" },
+    { month: "Stem Rust", desktop: "40-80%", mobile: "var(--color-firefox)" },
+    { month: "Spot Blotch", desktop: "30-50%", mobile: "var(--color-edge)" },
+    { month: "Head Blight/Scab", desktop: "20-40%", mobile: "var(--color-other)" },
   ];
   
   export const riceDataRadial = [
-    { month: "BlastDisease", desktop: "30-60%", mobile: "var(--color-blast-disease)" },
-    { month: "BacterialBlight", desktop: "20-50%", mobile: "var(--color-bacterial-blight)" },
-    { month: "SheathBlight", desktop: "20-40%", mobile: "var(--color-sheath-blight)" },
+    { month: "Blast Disease", desktop: "30-60%", mobile: "var(--color-chrome)" },
+    { month: "Bacterial Blight", desktop: "20-50%", mobile: "var(--color-safari)" },
+    { month: "Sheath Blight", desktop: "20-40%", mobile: "var(--color-firefox)" },
   ];
   
   export const potatoDataRadial = [
-    { month: "Late Blight", desktop: "50-90%", mobile: "var(--color-late-blight)" },
-    { month: "Potato Cyst Nematodes", desktop: "30-70%", mobile: "var(--color-potato-cyst-nematodes)" },
+    { month: "Late Blight", desktop: "50-90%", mobile: "var(--color-chrome)" },
+    { month: "Potato Cyst Nematodes", desktop: "30-70%", mobile: "var(--color-safari)" },
   ];
   
   export const tomatoDataRadial = [
-    { month: "Late Blight", desktop: "40-80%", mobile: "var(--color-late-blight)" },
-    { month: "Bacterial Spot", desktop: "30-50%", mobile: "var(--color-bacterial-spot)" },
+    { month: "Late Blight", desktop: "40-80%", mobile: "var(--color-chrome)" },
+    { month: "Bacterial Spot", desktop: "30-50%", mobile: "var(--color-safari)" },
   ];
   
   export const maizeDataRadial = [
-    { month: "Gray Leaf Spot", desktop: "30-70%", mobile: "var(--color-gray-leaf-spot)" },
-    { month: "Northern Corn Leaf Blight", desktop: "20-50%", mobile: "var(--color-northern-corn-leaf-blight)" },
+    { month: "Gray Leaf Spot", desktop: "30-70%", mobile: "var(--color-chrome)" },
+    { month: "Northern Corn Leaf Blight", desktop: "20-50%", mobile: "var(--color-safari)" },
   ];
   
   
