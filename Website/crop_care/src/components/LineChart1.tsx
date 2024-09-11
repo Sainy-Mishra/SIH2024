@@ -21,13 +21,13 @@ import {
 
 export const description = "A line chart with a custom label"
 
-const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
-]
+// const chartData = [
+//   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
+//   { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+//   { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
+//   { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
+//   { browser: "other", visitors: 90, fill: "var(--color-other)" },
+// ]
 
 const chartConfig = {
   visitors: {
@@ -125,10 +125,10 @@ export default function Component({crop}: any) {
         </ChartContainer>
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
-        {/* <div className="flex gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+        <div className="flex gap-2 font-medium leading-none">
+              <pre> 2018   2019    2020    2021   2022   2023</pre>
         </div>
-        <div className="leading-none text-muted-foreground">
+        {/* <div className="leading-none text-muted-foreground">
           Showing total visitors for the last 6 months
         </div> */}
       </CardFooter>
