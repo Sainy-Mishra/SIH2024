@@ -2,10 +2,13 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image
 import numpy as np
+from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import JSONResponse
+import uvicorn
 
-# Load your model
-model = tf.keras.models.load_model('model.h5')
+app = FastAPI()
 
+model = tf.keras.models.load_model('tomato.h5')
 # Define a function to preprocess the image
 def preprocess_image(image):
     # Resize the image to the expected input size of the model
@@ -13,6 +16,30 @@ def preprocess_image(image):
     image = np.array(image) / 255.0
     image = np.expand_dims(image, axis=0)  # Add batch dimension
     return image
+@app.post("/predict/")
+async def predict(file: UploadFile = File(...)):
+    image = Image.open(file.file)
+    image = preprocess_image(image)
+    predictions = model.predict(image)
+    class_labels = [
+        "Tomato Bacterial Spot",
+        "Tomato Early Blight",
+        "Tomato Late Blight",
+        "Tomato Leaf Mold",
+        "Tomato Septoria Leaf Spot",
+        "Tomato Spider Mites (Two-Spotted Spider Mite)",
+        "Tomato Target Spot",
+        "Tomato Yellow Leaf Curl Virus",
+        "Tomato Mosaic Virus",
+        "Tomato Healthy"
+    ]
+    predicted_class = class_labels[np.argmax(predictions)]
+    return JSONResponse(content={"prediction": predicted_class})
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+# Load your model
+
 
 
 # Define the Streamlit app
