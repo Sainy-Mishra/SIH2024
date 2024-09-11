@@ -12,7 +12,7 @@ let links = [
     {name:"Edit Profile", link: "edit"},
     { name: "Dashboard", link: "dashboard" },
     {name:"Services", link: "service"},
-    {name:"Contact us", link: "/#contact"},
+    {name:"Chatbot", link: "/chatbot"},
     { name: "Contact us", link: "/#contact" },
 ];
 const Leftsidebar = ({session, prop}: any) => {
@@ -58,6 +58,7 @@ const Leftsidebar = ({session, prop}: any) => {
               <li onClick={() => prop(links[0].link)} className='flex flex-row justify-evenly w-2/3 cursor-pointer text-slate-100 items-center px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><FaPencilAlt className=''/>{links[0].name}</li>
               <li onClick={() => prop(links[1].link)} className='flex flex-row justify-evenly w-2/3 cursor-pointer text-slate-100 items-center px-3 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><HiMiniSquares2X2 />{links[1].name}</li>
               <li onClick={() => prop(links[2].link)} className='flex flex-row justify-evenly w-2/3 px-3 cursor-pointer text-slate-100 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><FaToolbox className='my-auto'/>{links[2].name}</li>
+              <li onClick={() => window.open(links[3].link)} className='flex flex-row justify-evenly w-2/3 px-3 cursor-pointer text-slate-100 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><FaToolbox className='my-auto'/>{links[3].name}</li>
               <li className='flex flex-row justify-evenly w-2/3 px-3 cursor-pointer text-slate-100 py-2 my-3 font-medium rounded-md hover:bg-emerald-300 hover:text-black'><FaPowerOff className='my-auto'/><Logout /></li>
             </ul>
           </div>

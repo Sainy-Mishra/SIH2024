@@ -77,9 +77,7 @@ async def get_data(request: Request):
     data = Data(name='John Doe', age=30)
     return data
 
-x = 'tomato'
     # Load your model
-model = tf.keras.models.load_model(x+'.h5')
 
 class PredictionResponse(BaseModel):
     prediction: str
@@ -88,8 +86,9 @@ def preprocess_image(image: Image.Image) -> np.ndarray:
     image = np.array(image) / 255.0
     image = np.expand_dims(image, axis=0)
     return image
-@app.post("/predict/", response_model=PredictionResponse)
-async def predict(file: UploadFile = File(...)) -> PredictionResponse:
+@app.post("/tomato", response_model=PredictionResponse)
+async def tomato(file: UploadFile = File(...)) -> PredictionResponse:
+    model = tf.keras.models.load_model('tomato.h5')
     image = Image.open(BytesIO(await file.read()))
     processed_image = preprocess_image(image)
     predictions = model.predict(processed_image)
@@ -105,5 +104,67 @@ async def predict(file: UploadFile = File(...)) -> PredictionResponse:
         "Tomato Mosaic Virus",
         "Tomato Healthy"
     ]
+    predicted_class = class_labels[np.argmax(predictions)]
+    return {"prediction": predicted_class}
+
+@app.post("/maize", response_model=PredictionResponse)
+async def tomato(file: UploadFile = File(...)) -> PredictionResponse:
+    model = tf.keras.models.load_model('maize.h5')
+    image = Image.open(BytesIO(await file.read()))
+    processed_image = preprocess_image(image)
+    predictions = model.predict(processed_image)
+    class_labels = [
+    'Blight',
+    'Common Rust',
+    'Gray Leaf Spot',
+    'Healthy'
+]
+    predicted_class = class_labels[np.argmax(predictions)]
+    return {"prediction": predicted_class}
+
+@app.post("/potato", response_model=PredictionResponse)
+async def tomato(file: UploadFile = File(...)) -> PredictionResponse:
+    model = tf.keras.models.load_model('tomato.h5')
+    image = Image.open(BytesIO(await file.read()))
+    processed_image = preprocess_image(image)
+    predictions = model.predict(processed_image)
+    class_labels = [
+    'Potato Early blight',
+    'Potato Late blight',
+    'Potato healthy'
+]
+    predicted_class = class_labels[np.argmax(predictions)]
+    return {"prediction": predicted_class}
+
+@app.post("/rice", response_model=PredictionResponse)
+async def tomato(file: UploadFile = File(...)) -> PredictionResponse:
+    model = tf.keras.models.load_model('rice.h5')
+    image = Image.open(BytesIO(await file.read()))
+    processed_image = preprocess_image(image)
+    predictions = model.predict(processed_image)
+    class_labels = [
+    'Bacterial leaf blight',
+    'Brown spot',
+    'Healthy',
+    'Leaf blast',
+    'Leaf scald',
+    'Narrow brown spot'
+]
+    predicted_class = class_labels[np.argmax(predictions)]
+    return {"prediction": predicted_class}
+
+@app.post("/wheat", response_model=PredictionResponse)
+async def tomato(file: UploadFile = File(...)) -> PredictionResponse:
+    model = tf.keras.models.load_model('wheat.h5')
+    image = Image.open(BytesIO(await file.read()))
+    processed_image = preprocess_image(image)
+    predictions = model.predict(processed_image)
+    class_labels = [
+    'Brown rust',
+    'Healthy',
+    'Loose Smut',
+    'Septoria',
+    'Yellow rust'
+]
     predicted_class = class_labels[np.argmax(predictions)]
     return {"prediction": predicted_class}
