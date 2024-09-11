@@ -20,13 +20,27 @@ import {
 
 export const description = "A pie chart with a label"
 
+// const chartData = [
+//   { browser: "Nitrogen", visitors: 275, fill: "var(--color-chrome)" },
+//   { browser: "Phosphorus", visitors: 200, fill: "var(--color-safari)" },
+//   { browser: "Potassium", visitors: 187, fill: "var(--color-firefox)" },
+//   { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
+//   { browser: "other", visitors: 90, fill: "var(--color-other)" },
+// ]
+
 const chartData = [
-  { browser: "Nitrogen", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "Phosphorus", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "Potassium", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
-]
+  { browser: "Nitrogen", visitors: 150, fill: "var(--color-chrome)" },
+  { browser: "Phosphorus", visitors: 60, fill: "var(--color-safari)" },
+  { browser: "Potassium", visitors: 60, fill: "var(--color-firefox)" },
+  { browser: "Sulfur", visitors: 40, fill: "var(--color-edge)" },
+  { browser: "Zinc", visitors: 10, fill: "var(--color-other)" },
+  { browser: "Iron", visitors: 10, fill: "var(--color-other)" },
+  { browser: "Manganese", visitors: 2, fill: "var(--color-other)" },
+  { browser: "Copper", visitors: 1.5, fill: "var(--color-other)" },
+  { browser: "Boron", visitors: 1, fill: "var(--color-other)" },
+  { browser: "Molybdenum", visitors: 0.2, fill: "var(--color-other)" },
+];
+
 
 const chartConfig = {
   visitors: {

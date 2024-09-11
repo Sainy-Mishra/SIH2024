@@ -21,7 +21,7 @@ const Dashboard = () => {
           <div>
             <div className=' border-solid h-[100vh] flex flex-row' >
 
-              <div className='relative w-[20%] h-full py-10'>
+              <div className='relative hidden md:block md:w-[20%] md:h-full md:py-10'>
                 <Leftsidebar session={session} prop={setDisplay} />
               </div>
 
