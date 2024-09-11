@@ -93,13 +93,13 @@ export default function Component({crop}: any) {
               content={
                 <ChartTooltipContent
                   indicator="line"
-                  nameKey="visitors"
+                  nameKey="Price Index"
                   hideLabel
                 />
               }
             />
             <Line
-              dataKey="visitors"
+              dataKey="price"
               type="natural"
               stroke="var(--color-visitors)"
               strokeWidth={2}

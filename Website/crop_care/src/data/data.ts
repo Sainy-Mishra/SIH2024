@@ -102,48 +102,48 @@ export const wheatDataPie= [
 
   // LINE CHART 
   export const wheatDataLine = [
-    { browser: "2018", visitors: 150.0, fill: "var(--color-wheat)" },
-    { browser: "2019", visitors: 154.0, fill: "var(--color-wheat)" },
-    { browser: "2020", visitors: 158.0, fill: "var(--color-wheat)" },
-    { browser: "2021", visitors: 162.0, fill: "var(--color-wheat)" },
-    { browser: "2022", visitors: 173.0, fill: "var(--color-wheat)" },
-    { browser: "2023", visitors: 203.5, fill: "var(--color-wheat)" },
+    { browser: "2018", price: 150.0, fill: "var(--color-wheat)" },
+    { browser: "2019", price: 154.0, fill: "var(--color-wheat)" },
+    { browser: "2020", price: 158.0, fill: "var(--color-wheat)" },
+    { browser: "2021", price: 162.0, fill: "var(--color-wheat)" },
+    { browser: "2022", price: 173.0, fill: "var(--color-wheat)" },
+    { browser: "2023", price: 203.5, fill: "var(--color-wheat)" },
   ];
 
   export const riceDataLine = [
-    { browser: "2018", visitors: 150.0, fill: "var(--color-rice)" },
-    { browser: "2019", visitors: 155.0, fill: "var(--color-rice)" },
-    { browser: "2020", visitors: 160.0, fill: "var(--color-rice)" },
-    { browser: "2021", visitors: 165.0, fill: "var(--color-rice)" },
-    { browser: "2022", visitors: 170.0, fill: "var(--color-rice)" },
-    { browser: "2023", visitors: 170.7, fill: "var(--color-rice)" },
+    { browser: "2018", price: 150.0, fill: "var(--color-rice)" },
+    { browser: "2019", price: 155.0, fill: "var(--color-rice)" },
+    { browser: "2020", price: 160.0, fill: "var(--color-rice)" },
+    { browser: "2021", price: 165.0, fill: "var(--color-rice)" },
+    { browser: "2022", price: 170.0, fill: "var(--color-rice)" },
+    { browser: "2023", price: 170.7, fill: "var(--color-rice)" },
   ];
 
   export const maizeDataLine = [
-    { browser: "2018", visitors: 150.0, fill: "var(--color-maize)" },
-    { browser: "2019", visitors: 154.5, fill: "var(--color-maize)" },
-    { browser: "2020", visitors: 158.5, fill: "var(--color-maize)" },
-    { browser: "2021", visitors: 162.5, fill: "var(--color-maize)" },
-    { browser: "2022", visitors: 168.0, fill: "var(--color-maize)" },
-    { browser: "2023", visitors: 176.0, fill: "var(--color-maize)" },
+    { browser: "2018", price: 150.0, fill: "var(--color-maize)" },
+    { browser: "2019", price: 154.5, fill: "var(--color-maize)" },
+    { browser: "2020", price: 158.5, fill: "var(--color-maize)" },
+    { browser: "2021", price: 162.5, fill: "var(--color-maize)" },
+    { browser: "2022", price: 168.0, fill: "var(--color-maize)" },
+    { browser: "2023", price: 176.0, fill: "var(--color-maize)" },
   ];
 
   export const tomatoDataLine = [
-    { browser: "2018", visitors: 150.0, fill: "var(--color-tomato)" },
-    { browser: "2019", visitors: 145.0, fill: "var(--color-tomato)" },
-    { browser: "2020", visitors: 155.0, fill: "var(--color-tomato)" },
-    { browser: "2021", visitors: 160.0, fill: "var(--color-tomato)" },
-    { browser: "2022", visitors: 170.0, fill: "var(--color-tomato)" },
-    { browser: "2023", visitors: 180.0, fill: "var(--color-tomato)" },
+    { browser: "2018", price: 150.0, fill: "var(--color-tomato)" },
+    { browser: "2019", price: 145.0, fill: "var(--color-tomato)" },
+    { browser: "2020", price: 155.0, fill: "var(--color-tomato)" },
+    { browser: "2021", price: 160.0, fill: "var(--color-tomato)" },
+    { browser: "2022", price: 170.0, fill: "var(--color-tomato)" },
+    { browser: "2023", price: 180.0, fill: "var(--color-tomato)" },
   ];
 
   export const potatoDataLine = [
-    { browser: "2018", visitors: 150.0, fill: "var(--color-potato)" },
-    { browser: "2019", visitors: 155.0, fill: "var(--color-potato)" },
-    { browser: "2020", visitors: 160.0, fill: "var(--color-potato)" },
-    { browser: "2021", visitors: 165.0, fill: "var(--color-potato)" },
-    { browser: "2022", visitors: 180.0, fill: "var(--color-potato)" },
-    { browser: "2023", visitors: 188.5, fill: "var(--color-potato)" },
+    { browser: "2018", price: 150.0, fill: "var(--color-potato)" },
+    { browser: "2019", price: 155.0, fill: "var(--color-potato)" },
+    { browser: "2020", price: 160.0, fill: "var(--color-potato)" },
+    { browser: "2021", price: 165.0, fill: "var(--color-potato)" },
+    { browser: "2022", price: 180.0, fill: "var(--color-potato)" },
+    { browser: "2023", price: 188.5, fill: "var(--color-potato)" },
   ];
 
  // RADIAL CHART 
