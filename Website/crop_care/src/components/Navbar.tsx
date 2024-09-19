@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import Link from 'next/link';
+import Logout from '@/components/Logout';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { PiHouseLight, PiSun, PiPaperPlaneTiltLight, PiArrowRightLight } from "react-icons/pi";
@@ -36,13 +36,20 @@ const Navbar = () => {
             </nav>
           </div>
           {session?.status === "authenticated" && (
-          <div className="mr-7 align-middle">
-            <button onClick={()=>{router.push(`/dashboard`)}} className="bg-blue-500 cursor-pointer flex flex-row hover:text-green-100 hover:bg-blue-950 text-white p-[0.5rem] rounded-lg">Dashboard<PiArrowRightLight className='text-2xl mx-2 animate-pulse' /></button>
+          <div onClick={() => router.push("/dashboard")} className="mr-7 flex flex-row items-end rounded-md border-2 align-middle hover:bg-slate-600 hover:text-green-100 cursor-pointer bg-white bg-opacity-30 px-2 pb-3">
+            <div className='mx-2'>Dashboard</div>
+            <Image src={session?.data.user?.image || ''} alt='profile' width={25} height={40} className='rounded-full text-2xl' />
           </div>
           )}
-          {session?.status === "unauthenticated" && <div className="mr-7 align-middle">
-            <button onClick={()=>{router.push(`/login`)}} className="bg-blue-500 cursor-pointer flex flex-row hover:text-green-100 hover:bg-blue-950 text-white p-[0.5rem] rounded-lg">Get Started<PiArrowRightLight className='text-2xl mx-2' /></button>
-          </div>}
+          {session?.status === "unauthenticated" && (
+          <div onClick={() => router.push("/login")} className="mr-7 flex flex-row items-end rounded-md border-2 align-middle hover:bg-slate-600 hover:text-green-100 cursor-pointer bg-white bg-opacity-30 px-2 pb-3">
+            <div className='flex'>
+              <div className='mx-2'>
+                Get Started
+              </div>
+              <PiArrowRightLight className='text-2xl' /></div>
+          </div>
+          )}
         </div>
       </div>
   )
