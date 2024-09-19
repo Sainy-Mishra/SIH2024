@@ -10,6 +10,10 @@ const nextConfig = {
             protocol: 'https',
             hostname: 'lottie.host',
           },
+          {
+            protocol: 'https',
+            hostname: 'media.licdn.com',
+          },
         ],
       },
 };
