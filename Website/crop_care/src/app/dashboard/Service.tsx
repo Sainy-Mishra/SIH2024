@@ -48,7 +48,6 @@ const MyComponent = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      {!crop && (
       <div style={{ textAlign: 'center' }}>
         <h1 style={{ color: '#4CAF50' }}>Select Crop</h1>
         <select 
@@ -63,9 +62,7 @@ const MyComponent = () => {
         <option value="maize">Maize</option>
         </select>
       </div>
-      )}
-      {crop && (
-      <div style={{ textAlign: 'center', marginTop: '20px', width: '100%', maxWidth: '500px' }}>
+            <div style={{ textAlign: 'center', marginTop: '20px', width: '100%', maxWidth: '500px' }}>
         <h1 style={{ color: '#4CAF50' }}>Upload an Image of Infected {crop} Leaf</h1>
         <input 
         type="file" 
@@ -92,7 +89,6 @@ const MyComponent = () => {
         </p>
         )}
       </div>
-      )}
     </div>
   );
 };
