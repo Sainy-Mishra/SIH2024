@@ -1,6 +1,5 @@
 "use client"
-import React from 'react'
-import Logout from '@/components/Logout';
+import React from 'react';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { PiHouseLight, PiSun, PiPaperPlaneTiltLight, PiArrowRightLight } from "react-icons/pi";
