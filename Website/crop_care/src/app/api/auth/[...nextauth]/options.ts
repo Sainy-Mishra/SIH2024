@@ -36,7 +36,7 @@ export const { handlers:{GET, POST}, auth, signIn, signOut } = NextAuth({
         jwt({token, user}) {
             if(user){
                 token.id = user.id;
-            }
+            }   
             return token;
         },
         session({session, token}: any) {
